@@ -62,7 +62,7 @@ impl Step {
     }
 }
 
-impl<'a> Iterator for Steps<'a> {
+impl Iterator for Steps<'_> {
     type Item = Step;
 
     fn next(&mut self) -> Option<Self::Item> {

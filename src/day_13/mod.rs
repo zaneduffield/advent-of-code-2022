@@ -123,7 +123,7 @@ pub fn part_2(input: &Input) -> usize {
     let sorted = input
         .iter()
         .flat_map(|p| [&p.left, &p.right])
-        .chain(divs.into_iter())
+        .chain(divs)
         .sorted()
         .collect_vec();
 

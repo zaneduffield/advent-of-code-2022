@@ -83,7 +83,7 @@ impl<'a> From<&'a Input> for DiskWalker<'a> {
     }
 }
 
-impl<'a> Iterator for DiskWalker<'a> {
+impl Iterator for DiskWalker<'_> {
     type Item = usize;
 
     fn next(&mut self) -> Option<Self::Item> {

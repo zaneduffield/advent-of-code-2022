@@ -110,13 +110,12 @@ impl Input {
                 }
                 _ => Some(false),
             })
-            .map(|moved| {
+            .inspect(|&moved| {
                 if moved {
                     if let Some(b) = self.cave.get_mut(old_pos) {
                         *b = Block::Air;
                     }
                 }
-                moved
             })
             .or_else(|| {
                 self.cave.full = true;

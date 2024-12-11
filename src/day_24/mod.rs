@@ -77,12 +77,6 @@ pub fn input_generator(input: &str) -> Input {
     }
 }
 
-#[derive(Clone, Hash, PartialEq, PartialOrd, Eq, Ord)]
-struct State {
-    pos: (isize, isize),
-    elapsed: usize,
-}
-
 fn rotate_east_wind(x: Bits, step: isize, width: isize) -> Bits {
     (x << step) | (x >> (width - step))
 }

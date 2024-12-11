@@ -9,9 +9,6 @@ use nom::multi::separated_list1;
 pub type NumVal = i64;
 pub type NumId = usize;
 
-#[derive(Copy, Clone, Debug)]
-pub struct Num(NumId, NumVal);
-
 pub type Input = Vec<NumVal>;
 pub type Parsed = Vec<NumVal>;
 

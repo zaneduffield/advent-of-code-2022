@@ -100,7 +100,7 @@ impl<'a, 'b> MonkeyParser<'a, 'b> {
     }
 }
 
-impl<'a, 'b> nom::Parser<&'a str, Monkey, nom::error::Error<&'a str>> for MonkeyParser<'a, 'b> {
+impl<'a> nom::Parser<&'a str, Monkey, nom::error::Error<&'a str>> for MonkeyParser<'a, '_> {
     fn parse(
         &mut self,
         input: &'a str,
