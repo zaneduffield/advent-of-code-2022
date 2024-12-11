@@ -17,7 +17,6 @@ pub struct Shape {
     offsets: Vec<(isize, isize)>,
 }
 
-#[aoc_generator(day17)]
 pub fn input_generator(input: &str) -> Input {
     input
         .trim()
@@ -219,12 +218,10 @@ fn solve(input: &Input, shapes_to_fall: usize) -> usize {
     cave.height as usize
 }
 
-#[aoc(day17, part1)]
 pub fn part_1(input: &Input) -> usize {
     solve(input, 2022)
 }
 
-#[aoc(day17, part2)]
 pub fn part_2(input: &Input) -> usize {
     solve(input, 1000000000000)
 }

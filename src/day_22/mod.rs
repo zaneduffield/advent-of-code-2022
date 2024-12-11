@@ -247,7 +247,6 @@ pub fn parse_input(mut input: &str) -> IResult<Input> {
     ))
 }
 
-#[aoc_generator(day22)]
 pub fn input_generator(input: &str) -> Input {
     parse_input(input).unwrap().1
 }
@@ -320,7 +319,6 @@ fn wrap_part_1(pos: &PosDir, input: &Input, _: &()) -> PosDir {
     }
 }
 
-#[aoc(day22, part1)]
 pub fn part_1(input: &Input) -> usize {
     input
         .instructions
@@ -505,7 +503,6 @@ fn wrap_part_2(PosDir { pos, dir }: &PosDir, input: &Input, net: &Net) -> PosDir
     }
 }
 
-#[aoc(day22, part2)]
 pub fn part_2(input: &Input) -> usize {
     let mut net = make_net(input);
     fill_neighbours(input, &mut net);

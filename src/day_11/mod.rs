@@ -84,7 +84,6 @@ impl FromStr for Divisor {
     }
 }
 
-#[aoc_generator(day11)]
 pub fn input_generator(input: &str) -> Input {
     let monkeys: Vec<Monkey> = input
         .split("\n\n")
@@ -201,7 +200,6 @@ impl Input {
     }
 }
 
-#[aoc(day11, part1)]
 pub fn part_1(input: &Input) -> u64 {
     let input = &mut input.clone();
     for _ in 0..20 {
@@ -211,7 +209,6 @@ pub fn part_1(input: &Input) -> u64 {
     input.monkey_business()
 }
 
-#[aoc(day11, part2)]
 pub fn part_2(input: &Input) -> u64 {
     let input = &mut input.clone();
     for _ in 0..10000 {

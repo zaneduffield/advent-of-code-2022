@@ -51,7 +51,6 @@ fn get_lane_bit(lane: Lane, x: usize) -> LaneElm {
     lane.as_array()[quot] & (1 << rem)
 }
 
-#[aoc_generator(day12)]
 pub fn input_generator(input: &str) -> Input {
     let mut start = None;
     let mut end = None;
@@ -224,7 +223,6 @@ fn init_reachable(input: &Input, starts: &[Pos]) -> Vec<Lane> {
     reachable
 }
 
-#[aoc(day12, part1)]
 pub fn part_1(input: &Input) -> usize {
     #[cfg(debug_assertions)]
     dbg!(input);
@@ -232,7 +230,6 @@ pub fn part_1(input: &Input) -> usize {
     solve(init_reachable(input, &[input.start]), input)
 }
 
-#[aoc(day12, part2)]
 pub fn part_2(input: &Input) -> usize {
     solve(init_reachable(input, &input.alt_starts), input)
 }

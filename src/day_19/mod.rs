@@ -150,7 +150,6 @@ fn parse_blueprint(input: &str) -> IResult<Blueprint> {
     Ok((input, Blueprint::new(recipes)))
 }
 
-#[aoc_generator(day19)]
 pub fn input_generator(input: &str) -> Input {
     separated_list1(line_ending, parse_blueprint)(input)
         .unwrap()
@@ -268,7 +267,6 @@ impl Blueprint {
     }
 }
 
-#[aoc(day19, part1)]
 pub fn part_1(input: &Input) -> u32 {
     input
         .par_iter()
@@ -277,7 +275,6 @@ pub fn part_1(input: &Input) -> u32 {
         .sum()
 }
 
-#[aoc(day19, part2)]
 pub fn part_2(input: &Input) -> u32 {
     input
         .par_iter()

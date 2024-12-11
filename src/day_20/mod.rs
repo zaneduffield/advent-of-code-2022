@@ -112,18 +112,15 @@ fn find_insert_idx(
 
 type IResult<'a, T> = nom::IResult<&'a str, T>;
 
-#[aoc_generator(day20)]
 pub fn input_generator(data: &str) -> Parsed {
     let r: IResult<Parsed> = separated_list1(line_ending, i64)(data);
     r.unwrap().1
 }
 
-#[aoc(day20, part1)]
 pub fn part_1(input: &Input) -> NumVal {
     solve(input, |n| n, 1)
 }
 
-#[aoc(day20, part2)]
 pub fn part_2(input: &Input) -> NumVal {
     solve(input, |n| n * DECRYPTION_KEY, 10)
 }

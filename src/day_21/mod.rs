@@ -121,7 +121,6 @@ impl<'a, 'b> nom::Parser<&'a str, Monkey, nom::error::Error<&'a str>> for Monkey
     }
 }
 
-#[aoc_generator(day21)]
 pub fn input_generator(data: &str) -> Input {
     let mut id_map = FxHashMap::default();
 
@@ -163,7 +162,6 @@ impl Input {
     }
 }
 
-#[aoc(day21, part1)]
 pub fn part_1(input: &Input) -> LargeVal {
     let mut input = input.clone();
     input.eval(input.root_id)
@@ -295,7 +293,6 @@ impl Equation {
     }
 }
 
-#[aoc(day21, part2)]
 pub fn part_2(input: &Input) -> LargeVal {
     let eq = Equation::new(input);
     eq.solve()

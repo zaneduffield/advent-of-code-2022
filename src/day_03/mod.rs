@@ -36,12 +36,10 @@ fn priority(b: u8) -> u32 {
     priority as u32
 }
 
-#[aoc_generator(day3)]
 pub fn input_generator(input: &str) -> Input {
     input.lines().map(|line| line.bytes().collect()).collect()
 }
 
-#[aoc(day3, part1)]
 pub fn part_1(input: &Input) -> u32 {
     input
         .iter()
@@ -57,7 +55,6 @@ pub fn part_1(input: &Input) -> u32 {
         .sum()
 }
 
-#[aoc(day3, part2)]
 pub fn part_2(input: &Input) -> u32 {
     let mut sum = 0;
     for chunk in &input.iter().chunks(3) {

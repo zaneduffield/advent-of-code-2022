@@ -11,7 +11,6 @@ pub struct Pair {
 }
 pub type Input = Vec<Pair>;
 
-#[aoc_generator(day4)]
 pub fn input_generator(input: &str) -> Input {
     input
         .lines()
@@ -46,7 +45,6 @@ impl Assignment {
     }
 }
 
-#[aoc(day4, part1)]
 pub fn part_1(input: &Input) -> usize {
     input
         .iter()
@@ -54,7 +52,6 @@ pub fn part_1(input: &Input) -> usize {
         .count()
 }
 
-#[aoc(day4, part2)]
 pub fn part_2(input: &Input) -> usize {
     input.iter().filter(|p| p.left.intersects(&p.right)).count()
 }

@@ -60,7 +60,6 @@ impl Valve {
     }
 }
 
-#[aoc_generator(day16)]
 pub fn input_generator(input: &str) -> Input {
     let mut valves = (0..26 * 26).map(|_| None).collect_vec();
     let mut id_map = FxHashMap::default();
@@ -111,7 +110,6 @@ struct ValveState {
 const INIT_PRESSURE: u32 = 0;
 const INIT_FLOW: u8 = 0;
 
-#[aoc(day16, part1)]
 pub fn part_1(input: &Input) -> u32 {
     const ROUNDS: u32 = 30;
 
@@ -195,7 +193,6 @@ pub fn part_1(input: &Input) -> u32 {
     most_pressure
 }
 
-#[aoc(day16, part2)]
 pub fn part_2(input: &Input) -> u32 {
     // This is one of those days where for the sake of speed, I can't really generalise my solution
     // to work for both part 1 and part 2, despite them being quite similar.

@@ -44,12 +44,10 @@ fn start_marker_pos<const BUF_LEN: usize>(input: &str) -> usize {
         + 1
 }
 
-#[aoc(day6, part1)]
 pub fn part_1(input: &str) -> usize {
     start_marker_pos::<3>(input)
 }
 
-#[aoc(day6, part2)]
 pub fn part_2(input: &str) -> usize {
     start_marker_pos::<13>(input)
 }

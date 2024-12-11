@@ -15,7 +15,6 @@ pub struct Input {
     west: Vec<Bits>,
 }
 
-#[aoc_generator(day24)]
 pub fn input_generator(input: &str) -> Input {
     fn gap_pos(s: &str) -> usize {
         s.bytes().position(|c| c == b'.').map(|p| p - 1).unwrap()
@@ -149,12 +148,10 @@ fn solve(elapsed: usize, input: &Input) -> usize {
     elapsed as usize
 }
 
-#[aoc(day24, part1)]
 pub fn part_1(input: &Input) -> usize {
     solve(0, input)
 }
 
-#[aoc(day24, part2)]
 pub fn part_2(input: &Input) -> usize {
     let cost = solve(0, input);
 

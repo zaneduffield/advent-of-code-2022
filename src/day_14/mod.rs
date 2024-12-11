@@ -30,7 +30,6 @@ impl Cave {
 const FLOOR_BUF: usize = 2;
 const SEED_X_POS: usize = 500;
 
-#[aoc_generator(day14)]
 pub fn input_generator(input: &str) -> Input {
     let rock_paths: Vec<Vec<(usize, usize)>> = input
         .lines()
@@ -153,12 +152,10 @@ impl Input {
     }
 }
 
-#[aoc(day14, part1)]
 pub fn part_1(input: &Input) -> usize {
     input.clone().flood()
 }
 
-#[aoc(day14, part2)]
 pub fn part_2(input: &Input) -> usize {
     let mut input = input.clone();
     for x in 0..input.cave.width {

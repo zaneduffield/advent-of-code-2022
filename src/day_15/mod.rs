@@ -11,7 +11,6 @@ pub struct Input {
     sensors: Vec<Sensor>,
 }
 
-#[aoc_generator(day15)]
 pub fn input_generator(input: &str) -> Input {
     let re =
         Regex::new(r"Sensor at x=(-?\d+), y=(-?\d+): closest beacon is at x=(-?\d+), y=(-?\d+)")
@@ -56,7 +55,6 @@ fn non_beacons_for_row(sensors: &[Sensor], row: i32) -> IntRangeUnionFind<i32> {
         .collect::<IntRangeUnionFind<i32>>()
 }
 
-#[aoc(day15, part1)]
 pub fn part_1(input: &Input) -> usize {
     _part_1(input, 2_000_000)
 }
@@ -69,7 +67,6 @@ pub fn _part_1(input: &Input, row: i32) -> usize {
         .sum::<usize>()
 }
 
-#[aoc(day15, part2)]
 pub fn part_2(input: &Input) -> u64 {
     _part_2(input, 4_000_000)
 }

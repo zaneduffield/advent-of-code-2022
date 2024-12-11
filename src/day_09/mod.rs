@@ -95,12 +95,10 @@ fn solve(input: &str, snake_len: usize) -> usize {
     visited.len()
 }
 
-#[aoc(day9, part1)]
 pub fn part_1(input: &str) -> usize {
     solve(input, 2)
 }
 
-#[aoc(day9, part2)]
 pub fn part_2(input: &str) -> usize {
     solve(input, 10)
 }

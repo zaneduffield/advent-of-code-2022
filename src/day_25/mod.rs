@@ -52,12 +52,10 @@ fn format_snafu(num: i64) -> String {
     digits.into_iter().rev().map(format_digit).collect()
 }
 
-#[aoc(day25, part1)]
 pub fn part_1(input: &str) -> String {
     format_snafu(input.lines().map(parse_snafu).sum())
 }
 
-#[aoc(day25, part2)]
 pub fn part_2(_input: &str) -> String {
     "DONE!".to_owned()
 }

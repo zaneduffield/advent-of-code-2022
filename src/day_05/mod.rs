@@ -17,7 +17,6 @@ pub struct Input {
     instructions: Vec<Instruction>,
 }
 
-#[aoc_generator(day5)]
 pub fn input_generator(input: &str) -> Input {
     let mut stacks = Stacks::new();
     input
@@ -73,7 +72,6 @@ fn read_stacks(stacks: &Stacks) -> String {
         .collect()
 }
 
-#[aoc(day5, part1)]
 pub fn part_1(input: &Input) -> String {
     let mut stacks = input.stacks.clone();
     for Instruction { n, from, to } in &input.instructions {
@@ -89,7 +87,6 @@ pub fn part_1(input: &Input) -> String {
     read_stacks(&stacks)
 }
 
-#[aoc(day5, part2)]
 pub fn part_2(input: &Input) -> String {
     let mut stacks = input.stacks.clone();
     for Instruction { n, from, to } in &input.instructions {

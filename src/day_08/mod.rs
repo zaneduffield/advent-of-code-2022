@@ -15,7 +15,6 @@ impl Input {
     }
 }
 
-#[aoc_generator(day8)]
 pub fn input_generator(input: &str) -> Input {
     let mut height = 0;
     let width = input.lines().next().map_or(0, str::len);
@@ -46,7 +45,6 @@ where
     }
 }
 
-#[aoc(day8, part1)]
 pub fn part_1(input: &Input) -> usize {
     let mut visible_map = vec![false; input.data.len()];
     let mut visit = |i, j| visible_map[j * input.width + i] = true;
@@ -78,7 +76,6 @@ where
     }
 }
 
-#[aoc(day8, part2)]
 pub fn part_2(input: &Input) -> u32 {
     let input = &mut input.clone();
     input.data.iter_mut().for_each(|b| *b -= b'0');

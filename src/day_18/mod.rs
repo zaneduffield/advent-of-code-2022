@@ -13,7 +13,6 @@ pub struct Input {
     depth: usize,
 }
 
-#[aoc_generator(day18)]
 pub fn input_generator(input: &str) -> Input {
     Input::new(
         &input
@@ -152,7 +151,6 @@ fn count_visible_sides(input: &Input) -> usize {
     })
 }
 
-#[aoc(day18, part1)]
 pub fn part_1(input: &Input) -> usize {
     count_visible_sides(input)
 }
@@ -180,7 +178,6 @@ fn count_reachable_sides(input: &Input) -> usize {
     count
 }
 
-#[aoc(day18, part2)]
 pub fn part_2(input: &Input) -> usize {
     count_reachable_sides(input)
 }

@@ -105,17 +105,14 @@ impl Play {
     }
 }
 
-#[aoc_generator(day2)]
 pub fn input_generator(input: &str) -> Input {
     input.lines().map(|line| line.into()).collect()
 }
 
-#[aoc(day2, part1)]
 pub fn part_1(input: &Input) -> u32 {
     input.iter().map(Play::score).sum()
 }
 
-#[aoc(day2, part2)]
 pub fn part_2(input: &Input) -> u32 {
     input.iter().map(Play::score_p2).sum()
 }

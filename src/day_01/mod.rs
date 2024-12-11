@@ -3,7 +3,6 @@ use lazysort::*;
 
 pub type Input = Vec<ArrayVec<i32, 16>>;
 
-#[aoc_generator(day1)]
 pub fn input_generator(input: &str) -> Input {
     input
         .split("\n\n")
@@ -20,12 +19,10 @@ fn sum_inner(input: &Input) -> impl Iterator<Item = i32> + '_ {
     input.iter().map(|elf| elf.iter().sum())
 }
 
-#[aoc(day1, part1)]
 pub fn part_1(input: &Input) -> i32 {
     sum_inner(input).max().expect("No elf data was found.")
 }
 
-#[aoc(day1, part2)]
 pub fn part_2(input: &Input) -> i32 {
     sum_inner(input).sorted_by(|a, b| b.cmp(a)).take(3).sum()
 }

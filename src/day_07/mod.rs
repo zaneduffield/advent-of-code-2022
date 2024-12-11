@@ -94,7 +94,6 @@ impl<'a> Iterator for DiskWalker<'a> {
     }
 }
 
-#[aoc_generator(day7)]
 pub fn input_generator(input: &str) -> Input {
     let mut disk = Disk::with_capacity(1024);
 
@@ -139,7 +138,6 @@ pub fn input_generator(input: &str) -> Input {
     Input { disk, root }
 }
 
-#[aoc(day7, part1)]
 pub fn part_1(input: &Input) -> u32 {
     DiskWalker::from(input)
         .map(|n| Node::total_size(&input.disk, n))
@@ -147,7 +145,6 @@ pub fn part_1(input: &Input) -> u32 {
         .sum()
 }
 
-#[aoc(day7, part2)]
 pub fn part_2(input: &Input) -> u32 {
     let total_size = Node::total_size(&input.disk, input.root);
     let unused_space_required = 30_000_000;

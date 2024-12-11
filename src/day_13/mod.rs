@@ -91,7 +91,6 @@ impl From<&str> for Item {
     }
 }
 
-#[aoc_generator(day13)]
 pub fn input_generator(input: &str) -> Input {
     input
         .split("\n\n")
@@ -106,7 +105,6 @@ pub fn input_generator(input: &str) -> Input {
         .collect()
 }
 
-#[aoc(day13, part1)]
 pub fn part_1(input: &Input) -> usize {
     let idxs = input
         .iter()
@@ -117,7 +115,6 @@ pub fn part_1(input: &Input) -> usize {
     idxs.iter().sum()
 }
 
-#[aoc(day13, part2)]
 pub fn part_2(input: &Input) -> usize {
     let div1 = Item::List(List::from(2));
     let div2 = Item::List(List::from(6));

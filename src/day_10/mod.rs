@@ -17,7 +17,6 @@ impl From<&str> for Instruction {
     }
 }
 
-#[aoc_generator(day10)]
 pub fn input_generator(input: &str) -> Input {
     input.lines().map(Instruction::from).collect()
 }
@@ -57,7 +56,6 @@ impl<'a, I: Iterator<Item = &'a Instruction>> Machine<'a, I> {
     }
 }
 
-#[aoc(day10, part1)]
 pub fn part_1(input: &Input) -> i32 {
     let mut machine = Machine::new(input.iter());
     let key_cycles: [i32; 6] = [20, 60, 100, 140, 180, 220];
@@ -71,7 +69,6 @@ pub fn part_1(input: &Input) -> i32 {
         .sum()
 }
 
-#[aoc(day10, part2)]
 pub fn part_2(input: &Input) -> String {
     const WIDTH: usize = 40;
     const HEIGHT: usize = 6;

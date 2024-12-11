@@ -32,7 +32,6 @@ pub struct Input {
     diffs: [Step; 4],
 }
 
-#[aoc_generator(day23)]
 pub fn input_generator(input: &str) -> Input {
     let mut grid = vec![];
     let mut height = 0;
@@ -233,7 +232,6 @@ impl Debug for Input {
     }
 }
 
-#[aoc(day23, part1)]
 pub fn part_1(input: &Input) -> usize {
     let mut input = input.clone();
     for _ in 0..10 {
@@ -242,7 +240,6 @@ pub fn part_1(input: &Input) -> usize {
     input.num_empty_ground_tiles()
 }
 
-#[aoc(day23, part2)]
 pub fn part_2(input: &Input) -> usize {
     let mut input = input.clone();
     (1..).find(|_| !input.execute_round()).unwrap()
