@@ -157,12 +157,12 @@ impl Debug for Input {
 }
 
 const ALL_BUT_LAST_LANE: Lane = {
-    let mut lanes = [LaneElm::MAX; Lane::LANES];
-    lanes[Lane::LANES - 1] = 0;
+    let mut lanes = [LaneElm::MAX; Lane::LEN];
+    lanes[Lane::LEN - 1] = 0;
     Lane::from_array(lanes)
 };
 const ALL_BUT_FIRST_LANE: Lane = {
-    let mut lanes = [LaneElm::MAX; Lane::LANES];
+    let mut lanes = [LaneElm::MAX; Lane::LEN];
     lanes[0] = 0;
     Lane::from_array(lanes)
 };
@@ -180,7 +180,7 @@ fn solve(mut reachable: Vec<Lane>, input: &Input) -> usize {
                 let to_step = reachable[i] & input.grid[i].right;
                 let stepped = to_step.shl(Lane::splat(1));
                 let overflow = (to_step & ALL_BUT_LAST_LANE)
-                    .rotate_lanes_right::<1>()
+                    .rotate_elements_right::<1>()
                     .shr(shift);
 
                 stepped | overflow
@@ -189,7 +189,7 @@ fn solve(mut reachable: Vec<Lane>, input: &Input) -> usize {
                 let to_step = reachable[i] & input.grid[i].left;
                 let stepped = to_step.shr(Lane::splat(1));
                 let overflow = (to_step & ALL_BUT_FIRST_LANE)
-                    .rotate_lanes_left::<1>()
+                    .rotate_elements_left::<1>()
                     .shl(shift);
 
                 stepped | overflow
